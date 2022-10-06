@@ -5,11 +5,11 @@
   "properties": {
     "name": {
       "type": "string",
-      "minLength": 0
+      "minLength": 1
     },
     "dueDate": {
       "type": "string",
-      "minLength": 0
+      "minLength": 1
     },
     "done": {
       "type": "boolean"
