@@ -1,10 +1,11 @@
 import * as AWS  from 'aws-sdk'
-import * as AWSXRay from 'aws-xray-sdk'
+// import * as AWSXRay from 'aws-xray-sdk'
 import { DocumentClient } from 'aws-sdk/clients/dynamodb'
 import { TodoItem } from '../models/TodoItem'
 import { TodoUpdate } from '../models/TodoUpdate'
 
-const XAWS = AWSXRay.captureAWS(AWS)
+// const XAWS = AWSXRay.captureAWS(AWS)
+const XAWS = AWS
 
 export class TodosAccess {
 
@@ -36,7 +37,6 @@ export class TodosAccess {
         TableName: this.todosTable,
         Item: todo
     }).promise()
-
   }
 
   async deleteTodo(userId: string, todoId: string): Promise<void> {
